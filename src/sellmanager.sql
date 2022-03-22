@@ -1,20 +1,22 @@
 create database QuanLyBanHang;
 use QuanLyBanHang;
+
 create table customer(
-    customerName varchar(50),
     customerID int primary key auto_increment,
+    customerName varchar(50),
     customerAge int
+
 );
 create table product(
     productID int primary key auto_increment,
     productName varchar(50),
-    productPrice float
+    productPrice int
 );
 create table customer_order(
     customer_orderID int primary key auto_increment,
     customerID int,
     customer_orderDate datetime,
-    customer_orderTotalPrice float,
+    customer_orderTotalPrice int,
     foreign key (customerID) references customer(customerID)
 );
 create table oderDetail(
